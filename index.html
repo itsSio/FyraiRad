@@ -1,31 +1,64 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/libs/bootstrap.css">
+    <link rel="stylesheet" href="css/libs/bootstrap.css">
     <!-- Application specific CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 
-    <!-- JavaScript libraries -->
-    <script src="./jsonflex.js"></script>
-    <script src="./js/libs/jquery.js"></script>
-    <script src="./js/libs/popper.js"></script>
-    <script src="./js/libs/bootstrap.js"></script>
-    <script src="./js/libs/sticky-footer.js"></script>
-    <!-- Application specific JavaScript -->
-    <script src="./js/main.js"></script>
-    
-  </head>
   <body>
 
-    <header>
-    </header>
+    <header class="container">
+      <div class="row">
+        <div class="col-12">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Fyra i rad</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Startsida<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Spela</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Spelreger</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Highscore</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+</div>
+  </header>
     <main>
-      
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4 bg-dark text-white">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <div class="col-10">
+                <div class="col-2">
+               <button class="btn btn-danger text-white mb-2 ">Start Game!</button>
+               </div>
+              </div>
+          </div>
+        </div>
+       </div>
+      </div>
     </main>
 
     <footer class="container-fluid bg-primary text-white mt-4">
@@ -46,7 +79,7 @@
         <h4>Kontakta oss</h4>
         <p class="m-0">Tel: 08-123 45 67</p>
         <p class="m-0">E-post: info@cats.se</p>
-        <p class="m-0">Röksignaler: Nikotinfria</p>
+        <p class="m-0">Röksig<naler: Nikotinfria</p>
       </div>
     </div>
 
@@ -60,7 +93,17 @@
 
   </div>
 
+
 </footer>
+    <!-- JavaScript libraries -->
+    <script src="./jsonflex.js"></script>
+    <script src="./js/libs/jquery.js"></script>
+    <script src="./js/libs/popper.js"></script>
+    <script src="./js/libs/bootstrap.js"></script>
+    <script src="./js/libs/sticky-footer.js"></script>
+    <!-- Application specific JavaScript -->
+    <script src="./js/main.js"></script>
 
   </body>
+
 </html>
