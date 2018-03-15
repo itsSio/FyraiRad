@@ -6,7 +6,7 @@ class Game {
 		for(let player of players){
 			player.game = this;
 		}
-		// this.board = new Board();
+		this.board = new Board();
 	}
 
 }
