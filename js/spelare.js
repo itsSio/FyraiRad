@@ -1,7 +1,7 @@
-class Players{
-  constructor(name, color, type){
+class Player{
+  constructor(name, color, game){
     this.name = name;
     this.color = color;
-    this.type = type;
+    this.game = game;
   } 
 }

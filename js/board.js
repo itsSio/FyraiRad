@@ -15,6 +15,7 @@ class Board {
   makeMove(col, player){
     // col 0-6
 
+
     // return true if move possible, false otherwise (column full)
   }
 
@@ -23,11 +24,11 @@ class Board {
     let html = '';
     for(let row of this.data){
       console.log(row);
-      html += 'start row';
+      html += '<div class="row"><div class="col-12 clearfix">' 
       for(let col of row){
-        html += 'one slot'; // different css classes depending on slot 0, 1 or 2
+        html += '<img class="float-left" src="imgs/col.png">';
       }
-      html += 'end row';
+      html += '</div></div>';
     }
     $('.board').html(html);
   }
