@@ -2,13 +2,14 @@
 class Board {  
 
   constructor(){
+    this.currentPlayerNo = 1;
     this.data = [
-      [1,0,0,0,0,0,0],
-      [1,0,0,0,0,0,0],
-      [1,0,0,0,0,0,0],
-      [1,0,0,0,0,0,0],
-      [1,0,0,0,0,0,0],
-      [1,2,0,0,0,0,0]
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0]
     ];
     this.slotImages = [
       "col.png",
@@ -17,15 +18,22 @@ class Board {
     ];
   }
 
-//  makeMove(col){
-//   for(let i=0;i<6;i++){
-//     if(data[col][i] == 0);{
-//       return console.log('You can make a move');
-//     }
-//   }
-//   return false;
-//     // return true if move possible, false otherwise (column full)
-// }
+  makeMove(col){
+    let moveOk = false;
+    for(let row = 5; row >= 0; row--){
+      if(this.data[row][col] == 0){
+        this.data[row][col] = this.currentPlayerNo;
+        moveOk = true;
+        break;
+      }
+    }
+    if(moveOk){
+      this.currentPlayerNo = this.currentPlayerNo == 1 ? 2 : 1;
+      this.render(); 
+    }
+    return moveOk;
+  }
+
 
   render(){
     // in the div with the class "board" render all rows and columns from the data array
@@ -47,9 +55,10 @@ class Board {
   }
 
   addEventHandlers(){
+    let that = this;
     $('.xcol').click(function(){
       let col = $(this).attr('data-xcol') / 1;
-      console.log(col); 
+      that.makeMove(col); 
     });
   }
 
