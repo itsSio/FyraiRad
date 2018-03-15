@@ -1,17 +1,15 @@
-$(start);
-function start() {
 
-  class Board(){  
+class Board {  
 
-    constructor(){
-      this.data = [
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0]
-      ];
+  constructor(){
+    this.data = [
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0]
+    ];
   }
 
   makeMove(col, player){
@@ -23,17 +21,16 @@ function start() {
   render(){
     // in the div with the class "board" render all rows and columns from the data array
     let html = '';
-    for(let row of data){
+    for(let row of this.data){
+      console.log(row);
       html += 'start row';
       for(let col of row){
         html += 'one slot'; // different css classes depending on slot 0, 1 or 2
       }
       html += 'end row';
     }
-    $('.board').html(html)
+    $('.board').html(html);
   }
 
+}
 
-}
-  
-}
