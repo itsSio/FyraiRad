@@ -49,14 +49,12 @@
 
           <div class="col-10">
 
-            <form>
-              <div class="form-group">
-                <label for="formGroupExampleInput">Ange spelare 1</label>
-            </form>
+            <div class="form-group">
+            <label for="spelare1">Ange spelare 1</label>
             
             <div class="row justify-content-around order-1">
               <div class="col-12 col-md-6">    
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Namn">
+                <input type="text" class="form-control" id="player1" placeholder="Namn">
               </div>
 
               <div class="col-12 col-md-2 order-2">
@@ -69,14 +67,14 @@
 
               <div class="col-12 col-md-3 order-4">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                  <label class="form-check-label" for="exampleRadios1">
+                  <input class="form-check-input" type="radio" name="player1HumanOrBot" id="player1Human" value="human" checked>
+                  <label class="form-check-label" for="player1Human">
                     Människa
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">
+                  <input class="form-check-input" type="radio" name="player1HumanOrBot" id="player1Bot" value="bot">
+                  <label class="form-check-label" for="player1Bot">
                     Dator
                   </label>
                 </div>
@@ -91,14 +89,14 @@
 
           <div class="col-10">
 
-            <form>
-              <div class="form-group">
-                <label for="formGroupExampleInput">Ange spelare 2</label>
-            </form>
+            
+            <div class="form-group">
+              <label for="player2">Ange spelare 2</label>
+            
             
             <div class="row justify-content-around">
               <div class="col-12 col-md-6">    
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Namn">
+                <input type="text" class="form-control" id="player2" placeholder="Namn">
               </div>
 
               <div class="col-12 col-md-2 order-2">
@@ -109,27 +107,26 @@
                 <p>Typ:</p>
               </div>
 
-              <div class="col-12 col-md-3 order-4">
+               <div class="col-12 col-md-3 order-4">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                  <label class="form-check-label" for="exampleRadios1">
+                  <input class="form-check-input" type="radio" name="player2HumanOrBot" id="player2Human" value="human" checked>
+                  <label class="form-check-label" for="player2Human">
                     Människa
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">
+                  <input class="form-check-input" type="radio" name="player2HumanOrBot" id="player2Bot" value="bot">
+                  <label class="form-check-label" for="player2Bot">
                     Dator
                   </label>
                 </div>
+
 
               </div>
             </div>
           </div>
             <div class="col-12 col-md-3 float-right mt-3">
-              <form action="game.html">
-                <button class="btn btn-danger text-white mb-2">Starta</button>
-              </form>
+                <button class="btn btn-danger text-white mb-2 start-game-after-player-input">Starta</button>
             </div>
         </div>
       </div> <!-- end of container -->
@@ -177,6 +174,11 @@
     <script src="./js/libs/bootstrap.js"></script>
     <script src="./js/libs/sticky-footer.js"></script>
     <!-- Application specific JavaScript -->
+    <script src="./js/classes/app.js"></script>
+    <script src="./js/classes/player.js"></script>
+    <script src="./js/classes/bot.js"></script>
+    <script src="./js/classes/game.js"></script>
+    <!-- <script src="./js/libs/board.js"></script> -->
     <script src="./js/main.js"></script>
 
   </body>
