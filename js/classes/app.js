@@ -16,6 +16,8 @@ class App {
 			new p1class(p1name, 'red'),
 			new p2class(p2name, 'yellow')
 		];
+
+		console.log(players);
 		new Game(players);
 
 	}
