@@ -20,6 +20,7 @@ class Board {
 
   makeMove(col){
     let moveOk = false;
+    let antalDrag = 0;
     for(let row = 5; row >= 0; row--){
       if(this.data[row][col] == 0){
         this.data[row][col] = this.currentPlayerNo;
@@ -65,6 +66,5 @@ class Board {
 }
 
 
-  }
   
-}
+  
