@@ -1,8 +1,3 @@
-$(document).ready(function(){
-    let b = new Board();
-    b.render();
-});
-
 class Board {  
 
   constructor(){
@@ -20,9 +15,8 @@ class Board {
       "col-red.png",
       "col-yellow.png"
     ];
-  }
-  startGame(){
-    
+    console.log("HEPP")
+    this.render();
   }
 
   makeMove(col){
@@ -49,7 +43,6 @@ class Board {
     // in the div with the class "board" render all rows and columns from the data array
     let html = '';
     for(let row of this.data){
-      console.log(row);
       html += '<div class="row offset-2"><div class="col-12 clearfix">' 
       let xcol=0;
       for(let col of row){
@@ -65,18 +58,22 @@ class Board {
   }
 
   addEventHandlers(){
+  
     let that = this;
+  
     $('.xcol').click(function(){
       let col = $(this).attr('data-xcol') / 1;
       that.makeMove(col); 
     });
+  
+   $('#Restart').click(function(){
+      let b = new Board();
+      b.render();
+    });
+
   }
+  
+  
 }
 
-$('#Restart').click(function(){
-      let b = new Board();
-    b.render();
-      
-    });
-  
   
