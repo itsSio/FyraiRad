@@ -6,8 +6,8 @@ class App {
 	}
 
 	verifyPlayerNamesAndStart(p1name, p1type, p2name, p2type){
-		if(p1name.length < 2 || p2name.length < 2){
-			alert("Ange namnen med minst två tecken!");
+		if(p1name.length < 2 || p2name.length < 2 || p1name.length>12 || p2name.length>12){
+			alert("Ange namnen med minst två eller under 12 tecken!");
 			return;
 		}
 		let p1class = p1type == 'human' ? Player : Bot;
