@@ -7,6 +7,8 @@ class Game {
 			player.game = this;
 		}
 		this.board = new Board();
+    
 	}
+
 
 }

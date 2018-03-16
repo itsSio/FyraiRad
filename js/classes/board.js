@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    let b = new Board();
+    b.render();
+});
 
 class Board {  
 
@@ -16,6 +20,9 @@ class Board {
       "col-red.png",
       "col-yellow.png"
     ];
+  }
+  startGame(){
+    
   }
 
   makeMove(col){
@@ -43,7 +50,7 @@ class Board {
     let html = '';
     for(let row of this.data){
       console.log(row);
-      html += '<div class="row"><div class="col-12 clearfix">' 
+      html += '<div class="row offset-2"><div class="col-12 clearfix">' 
       let xcol=0;
       for(let col of row){
         html += '<img class="float-left xcol" data-xcol="'+xcol+'" src="imgs/' + this.slotImages[col] + '">';
@@ -64,9 +71,12 @@ class Board {
       that.makeMove(col); 
     });
   }
-
 }
 
-
+$('#Restart').click(function(){
+      let b = new Board();
+    b.render();
+      
+    });
   
   

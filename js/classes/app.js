@@ -9,7 +9,7 @@ class App {
 		if(p1name.length < 2 || p2name.length < 2){
 			alert("Please enter names with at least two characters!");
 			return;
-		}
+		}else{window.location.href='game.html';}
 		let p1class = p1type == 'human' ? Player : Bot;
 		let p2class = p2type == 'human' ? Player : Bot;
 		let players = [
@@ -31,8 +31,6 @@ class App {
 				$('#player2').val(),
 				$('[name="player2HumanOrBot"]:checked').val()
 			);
-			window.location.href='game.html';
 		});
 	}
-
 }
