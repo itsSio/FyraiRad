@@ -31,6 +31,7 @@ class App {
 				$('#player2').val(),
 				$('[name="player2HumanOrBot"]:checked').val()
 			);
+			window.location.href='game.html';
 		});
 	}
 
