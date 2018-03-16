@@ -7,6 +7,7 @@ class Game {
 			player.game = this;
 		}
 	$('.input-forms').hide();
+	$('footer').hide();
 	$('.navbar').hide();
     $('.game-page').show();
         console.log("CREATED game")
