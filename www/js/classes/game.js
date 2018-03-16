@@ -6,7 +6,8 @@ class Game {
 		for(let player of players){
 			player.game = this;
 		}
-    $('.input-forms').hide();
+	$('.input-forms').hide();
+	$('.navbar').hide();
     $('.game-page').show();
         console.log("CREATED game")
 		this.board = new Board();
