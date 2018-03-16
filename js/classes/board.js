@@ -31,8 +31,10 @@ class Board {
     if(moveOk){
       this.currentPlayerNo = this.currentPlayerNo == 1 ? 2 : 1;
       this.render(); 
+      antalDrag++
     }
     return moveOk;
+   
   }
 
 
