@@ -38,6 +38,25 @@ class Board {
    
   }
 
+  // identifyWinner(){
+  //   for (let x = 0; x < this.data.length; x++) {
+  //     for (let y = 0; y < this.data[x].length; y++) {
+  //       // console.log(this.data[x][y]);
+  //       let square = this.data[x][y];
+  //       // console.log(square);
+        
+  //         console.log(square);
+  //         if ([y] === 1 &&
+  //           [y + 1] === 1 &&
+  //           [y + 2] === 1 &&
+  //           [y + 3] === 1 &&) {
+  //           console.log("red wins");
+  //           return;
+  //         }
+        
+  //     }  
+  //   }
+  // }
 
   render(){
     // in the div with the class "board" render all rows and columns from the data array

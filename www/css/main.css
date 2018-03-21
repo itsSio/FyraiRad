@@ -9,6 +9,21 @@
   background-color:yellow;
 }
 
+.board-holder {
+  overflow: hidden;
+  
+  /* set width and height from js*/
+}
+
+.board {
+  width: 870px;
+  height: 870px;
+  transform-origin: 0 0;
+  /*transform: scale(0.33); - do by js instead */
+  display:none; /* don't show before js scale */
+}
+
+
 .button {
   padding: 10px 15px;
   font-size: 24px;
