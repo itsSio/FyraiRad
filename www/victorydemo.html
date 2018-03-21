@@ -8,12 +8,7 @@
     <link rel="stylesheet" href="css/libs/bootstrap.css">
     <!-- Application specific CSS -->
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/libs/jquery.js"></script>
-    <script src="js/board.js"></script>
-    <script src="js/classes/player.js"></script>
-    <script src="js/classes/game.js"></script>
-    <script src="js/classes/app.js"></script>
-    <script src="js/classes/victory.js"></script>
+   
 <body>
 
 <div class="container">
@@ -31,7 +26,31 @@
 </div>
 
 
-<script>
+
+<button onclick="victory.victoryToPlayer(1);">Spelare 1 har vunnit</button>
+
+<button onclick="victory.victoryToPlayer(2);">Spelare 2 har vunnit</button>
+
+
+<footer>
+
+</footer>
+   <!-- JavaScript libraries -->
+    <script src="./jsonflex.js"></script>
+    <script src="./js/libs/jquery.js"></script>
+    <script src="./js/libs/popper.js"></script>
+    <script src="./js/libs/bootstrap.js"></script>
+    <script src="./js/libs/sticky-footer.js"></script>
+    <!-- Application specific JavaScript -->
+    <script src="./js/classes/app.js"></script>
+    <script src="./js/classes/player.js"></script>
+    <script src="./js/classes/bot.js"></script>
+    <script src="./js/classes/game.js"></script>
+    <script src="./js/classes/board.js"></script>
+        <script src="js/classes/victory.js"></script>
+    <script src="./js/main.js"></script>
+
+    <script>
 
     let players = [
         new Player("Hej", "red"),
@@ -44,14 +63,6 @@
      victory = new Victory(players);
 </script>
 
-<button onclick="victory.victoryToPlayer(1);">Spelare 1 har vunnit</button>
-
-<button onclick="victory.victoryToPlayer(2);">Spelare 2 har vunnit</button>
-
-
-<footer>
-
-</footer>
 
 </body>
 
