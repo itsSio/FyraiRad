@@ -16,6 +16,8 @@ class Board {
       "col-yellow.png"
     ];
     console.log("HEPP")
+    // Removes scrolling when the game is on
+    $('body').addClass('hiddenScroll');
     this.render();
   }
  
@@ -73,7 +75,7 @@ class Board {
     // in the div with the class "board" render all rows and columns from the data array
     let html = '';
     for(let row of this.data){
-      html += '<div class="row offset-2"><div class="col-12 clearfix">' 
+      html += '<div class="row"><div class="col-12 clearfix">' 
       let xcol=0;
       for(let col of row){
         html += '<img class="float-left xcol" data-xcol="'+xcol+'" src="imgs/' + this.slotImages[col] + '">';
@@ -81,7 +83,7 @@ class Board {
       }
       html += '</div></div>';
     }
-    $('.board').html(html);
+    $('.board .game').html(html);
 
     this.addEventHandlers();
 

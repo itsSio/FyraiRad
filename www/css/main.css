@@ -15,15 +15,6 @@
   /* set width and height from js*/
 }
 
-.board {
-  width: 870px;
-  height: 870px;
-  transform-origin: 0 0;
-  /*transform: scale(0.33); - do by js instead */
-  display:none; /* don't show before js scale */
-}
-
-
 .button {
   padding: 10px 15px;
   font-size: 24px;
@@ -45,25 +36,32 @@
   transform: translateY(4px);
 }
 
-.invalid {
+.invalid, .invalid2 {
   color: red;
   font-size: 14px;
 }
 
-.hidden {
+.hidden, .hidden2 {
   visibility: hidden;
 }
 
 .board-holder {
   overflow: hidden;
-  
-  /* set width and height from js*/
 }
 
 .board {
-  width: 870px;
-  height: 870px;
+  width: 650px;
+  height: 650px;
   transform-origin: 0 0;
   /*transform: scale(0.33); - do by js instead */
   display:none; /* don't show before js scale */
+  margin: 0 auto;
+}
+
+.xcol {
+  width: calc(100% / 7);
+}
+
+.hiddenScroll {
+  overflow: hidden;
 }
