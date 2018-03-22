@@ -36,19 +36,17 @@
   transform: translateY(4px);
 }
 
-.invalid1 .invalid2 {
+.invalid, .invalid2 {
   color: red;
   font-size: 14px;
 }
 
-.hidden1 .hidden2 {
+.hidden, .hidden2 {
   visibility: hidden;
 }
 
 .board-holder {
   overflow: hidden;
-  
-  /* set width and height from js*/
 }
 
 .board {
