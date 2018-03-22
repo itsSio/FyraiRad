@@ -1,4 +1,9 @@
 function stickyFooter(){
+
+  // Disables sticky footer when game is on
+  if ($('.board img').length > 0) {
+    return;
+  }
   // Remove top margin set previously by this script
   $('footer').attr('style','');
   // Get the footers height

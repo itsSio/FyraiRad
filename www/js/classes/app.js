@@ -6,10 +6,14 @@ class App {
 	}
 
 	verifyPlayerNamesAndStart(p1name, p1type, p2name, p2type){
-		if(p1name.length < 2 || p2name.length < 2 || p1name.length>12 || p2name.length>12){
+		if(p1name.length < 2 || p2name.length < 2){
 			// alert("Ange namnen med minst två eller under 12 tecken!");
-			$('p').removeClass('hidden');
-			$('.invalid').text("Ange namnen med minst två eller under 12 tecken!");
+			$('p').removeClass('hidden1');
+			$('.invalid1').text("Ange namnen med minst två eller under 12 tecken!");
+			return;
+		} else if(p2name.length < 2 || p2name.length>12) {
+			$('p').removeClass('hidden2');
+			$('.invalid2').text("Ange namnen med minst två eller under 12 tecken!");
 			return;
 		}
 		let p1class = p1type == 'human' ? Player : Bot;
