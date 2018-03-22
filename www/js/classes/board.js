@@ -18,6 +18,29 @@ class Board {
     console.log("HEPP")
     this.render();
   }
+ 
+  
+
+  //identifyWinner(){
+     //for (let x = 0; x < this.data.length; x++) {
+   
+
+      // for (let y = 0; y < this.data[x].length; y++) {
+      // var square = this.data[x][y];
+      //  if (square && square.currentPlayerNo) {
+      // if (x === 0 || x === 1) {
+      // if (this.data[x + 1][y].currentPlayerNo === square.currentPlayerNo &&
+       //         this.data[x + 2][y].currentPlayerNo === square.currentPlayerNo &&
+        //        this.data[x + 3][y].currentPlayerNo === square.currentPlayerNo) {
+
+         //     console.log("Color" , square.currentPlayerNo , "Wins");
+         //   return;
+         //   }
+        //  }
+       //  }
+    //  }
+  //   }
+  // }
 
   makeMove(col){
     let moveOk = false;
@@ -35,28 +58,16 @@ class Board {
       antalDrag++
     }
     return moveOk;
+   // identifyWinner();
    
   }
 
-  // identifyWinner(){
-  //   for (let x = 0; x < this.data.length; x++) {
-  //     for (let y = 0; y < this.data[x].length; y++) {
-  //       // console.log(this.data[x][y]);
-  //       let square = this.data[x][y];
-  //       // console.log(square);
-        
-  //         console.log(square);
-  //         if ([y] === 1 &&
-  //           [y + 1] === 1 &&
-  //           [y + 2] === 1 &&
-  //           [y + 3] === 1 &&) {
-  //           console.log("red wins");
-  //           return;
-  //         }
-        
-  //     }  
-  //   }
-  // }
+ 
+
+
+
+     
+      
 
   render(){
     // in the div with the class "board" render all rows and columns from the data array
@@ -91,8 +102,9 @@ class Board {
     });
 
   }
-  
-  
 }
+  
+  
+
 
   
