@@ -6,12 +6,12 @@ class Game {
 		for(let player of players){
 			player.game = this;
 		}
-	$('.input-forms').hide();
-	$('footer').hide();
-	$('.navbar').hide();
-    $('.game-page').show();
-        console.log("CREATED game")
-		this.board = new Board();
+		$('.input-forms').hide();
+		$('footer').hide();
+		$('.navbar').hide();
+	    $('.game-page').show();
+	    console.log("CREATED game")
+		this.board = new Board(this);
 	}
 
 

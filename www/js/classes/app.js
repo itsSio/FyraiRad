@@ -21,7 +21,7 @@ class App {
 			new p1class(p1name, 'red'),
 			new p2class(p2name, 'yellow')
 		];
-
+		console.log(players);
 		$('.p1').text(players[0].name);
 		$('.p2').text(players[1].name);
 		new Game(players);

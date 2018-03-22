@@ -1,7 +1,9 @@
 class Board {  
 
-  constructor(){
-    this.currentPlayerNo = 1;
+  constructor(game){
+    this.game = game;
+    this.currentPlayerNo = 0;
+    this.gameFinished = false;
     this.data = [
       [0,0,0,0,0,0,0],
       [0,0,0,0,0,0,0],
@@ -19,6 +21,7 @@ class Board {
     // Removes scrolling when the game is on
     $('body').addClass('hiddenScroll');
     this.render();
+    this.makeNewTurn();
   }
  
   
@@ -49,27 +52,69 @@ class Board {
     let antalDrag = 0;
     for(let row = 5; row >= 0; row--){
       if(this.data[row][col] == 0){
-        this.data[row][col] = this.currentPlayerNo;
+        this.data[row][col] = this.currentPlayerNo + 1;
         moveOk = true;
         break;
       }
-    }
-    if(moveOk){
-      this.currentPlayerNo = this.currentPlayerNo == 1 ? 2 : 1;
-      this.render(); 
-      antalDrag++
     }
     return moveOk;
    // identifyWinner();
    
   }
 
- 
+  switchPlayer(){
+    this.currentPlayerNo = this.currentPlayerNo == 0 ? 1 : 0;
 
 
+  makeNewTurn(){
+    let currentPlayer = this.game.players[this.currentPlayerNo];
 
-     
-      
+    if(currentPlayer instanceof Bot) {
+      // Setting timer
+      setTimeout(function() {
+        currentPlayer.randomClick();
+      }, 300);
+    }
+  }
+
+  checkIfGameFinished(){
+    if($('.game img[src="imgs/col.png"]').length == 0) {
+      this.gameFinished = true;
+    }
+  }
+
+  addEventHandlers(){
+  
+    let that = this;
+  
+    $('.xcol').click(function(){
+      if (this.gameFinished) {
+        return;
+      }
+
+      let col = $(this).attr('data-xcol') / 1;
+      let moveWasOk = that.makeMove(col);
+
+      if (moveWasOk) {
+        that.switchPlayer();
+        that.render();
+        that.checkIfGameFinished();
+      }
+
+      if (!this.gameFinished) {
+        that.makeNewTurn();
+      } else {
+        console.log('game finished');
+      }
+
+    });
+  
+   $('#Restart').click(function(){
+      let b = new Board();
+      b.render();
+    });
+
+  }
 
   render(){
     // in the div with the class "board" render all rows and columns from the data array
@@ -86,22 +131,6 @@ class Board {
     $('.board .game').html(html);
 
     this.addEventHandlers();
-
-  }
-
-  addEventHandlers(){
-  
-    let that = this;
-  
-    $('.xcol').click(function(){
-      let col = $(this).attr('data-xcol') / 1;
-      that.makeMove(col); 
-    });
-  
-   $('#Restart').click(function(){
-      let b = new Board();
-      b.render();
-    });
 
   }
 }

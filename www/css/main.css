@@ -45,10 +45,6 @@
   visibility: hidden;
 }
 
-.board-holder {
-  overflow: hidden;
-}
-
 .board {
   width: 650px;
   height: 650px;
@@ -64,4 +60,3 @@
 
 .hiddenScroll {
   overflow: hidden;
-}
