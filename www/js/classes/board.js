@@ -61,7 +61,9 @@ class Board {
         }
         if (playerLength == 4){
           this.gameFinished = true;
-          alert("Du har vunnit")
+          let victory = new Victory(game.players);
+          victory.victoryToPlayer(playerNo);
+          //alert("Du har vunnit")
           console.log("Antal drag:",this.antalDrag)
           return;
         }
@@ -89,7 +91,9 @@ class Board {
 
         }
         if (playerLength == 4){
-          alert("Du har vunnit")
+          let victory = new Victory(game.players);
+          victory.victoryToPlayer(playerNo);
+          //alert("Du har vunnit")
           console.log("Antal drag:",this.antalDrag)
           return;
         }
