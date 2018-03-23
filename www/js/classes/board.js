@@ -18,7 +18,7 @@ class Board {
       "col-yellow.png"
     ];
     console.log("HEPP")
-    // Removes scrolling when the game is on
+    // Removes scrolling when the game is on (helps with scaling)
     $('body').addClass('hiddenScroll');
     this.render();
     this.makeNewTurn();
@@ -122,8 +122,10 @@ class Board {
 
   switchPlayer(){
     this.currentPlayerNo = this.currentPlayerNo == 0 ? 1 : 0;
+    
+    // Add underline for player names
+    $('h1').toggleClass('p1');
   }
-
 
   makeNewTurn(){
     let currentPlayer = this.game.players[this.currentPlayerNo];
@@ -132,7 +134,7 @@ class Board {
       // Setting timer
       setTimeout(function() {
         currentPlayer.randomClick();
-      }, 300);
+      }, 400);
     }
   }
 
