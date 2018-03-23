@@ -27,6 +27,7 @@ class App {
 		new Game(players);
 		
 
+
 	}
 
 	addEvents(){

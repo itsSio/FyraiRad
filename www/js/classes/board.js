@@ -25,7 +25,34 @@ class Board {
   }
  
   
+   checkWin(playerNo) {
+    
 
+    for (let x = 0; x < this.data.length; x++) {
+      var playerLength = 0;
+          
+      for (let y = 0; y < this.data[x].length; y++) {
+        var square = this.data[x][y];
+        //console.log(x,y,square)
+
+        //if (this.data[x][y] === playerNo){
+        if (square === playerNo){
+          playerLength++;
+          console.log("spelare",square,"antal",playerLength)
+        } if (square != playerNo) {
+            playerLength = 0;
+
+        }
+        if (playerLength == 4){
+          alert("Du har vunnit")
+          return;
+        }
+        
+      }
+    }
+  }
+  
+   
   //identifyWinner(){
      //for (let x = 0; x < this.data.length; x++) {
    
@@ -64,6 +91,7 @@ class Board {
 
   switchPlayer(){
     this.currentPlayerNo = this.currentPlayerNo == 0 ? 1 : 0;
+  }
 
 
   makeNewTurn(){
@@ -96,6 +124,8 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
+        that.checkWin(that.currentPlayerNo+1);
+       
         that.switchPlayer();
         that.render();
         that.checkIfGameFinished();
