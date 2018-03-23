@@ -1,4 +1,4 @@
-class Board {  
+class Board {
 
   constructor(game){
     this.game = game;
@@ -24,18 +24,32 @@ class Board {
     this.render();
     this.makeNewTurn();
   }
+<<<<<<< Updated upstream
  
   
    checkWinHorizontal(playerNo) {
      let rows = this.data.length;
     let cols = this.data[0].length;
+=======
+
+
+   checkWin(playerNo) {
+
+>>>>>>> Stashed changes
 
     for (let y = 0; y < rows; y++) {
       var playerLength = 0;
+<<<<<<< Updated upstream
           
       for (let x = 0; x < cols; x++) {
         var square = this.data[y][x];
         
+=======
+
+      for (let y = 0; y < this.data[x].length; y++) {
+        var square = this.data[x][y];
+        //console.log(x,y,square)
+>>>>>>> Stashed changes
 
         //if (this.data[x][y] === playerNo){
         if (square === playerNo){
@@ -79,10 +93,11 @@ class Board {
           console.log("Antal drag:",this.antalDrag)
           return;
         }
-        
+
       }
     }
   }
+<<<<<<< Updated upstream
   
 
   
@@ -108,7 +123,7 @@ class Board {
     }
     return moveOk;
    // identifyWinner();
-   
+
   }
 
   switchPlayer(){
@@ -138,9 +153,9 @@ class Board {
   }
 
   addEventHandlers(){
-  
+
     let that = this;
-  
+
     $('.xcol').click(function(){
       if (that.gameFinished || Board.disableAllClicks) {
         return;
@@ -150,8 +165,13 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
+<<<<<<< Updated upstream
         that.checkWinHorizontal(that.currentPlayerNo+1);
         that.checkWinVertical(that.currentPlayerNo+1);
+=======
+        that.checkWin(that.currentPlayerNo+1);
+
+>>>>>>> Stashed changes
         that.switchPlayer();
         that.render();
         that.checkIfGameFinished();
@@ -165,10 +185,14 @@ class Board {
       }
 
     });
+<<<<<<< Updated upstream
   
   // Remove all old click-functions from the restart-button
    $('#Restart').off();
    // then add One new click-function to the button
+=======
+
+>>>>>>> Stashed changes
    $('#Restart').click(function(){
     // Cancel the current timer
     clearTimeout(that.botTimeout);
@@ -183,7 +207,7 @@ class Board {
     // in the div with the class "board" render all rows and columns from the data array
     let html = '';
     for(let row of this.data){
-      html += '<div class="row"><div class="col-12 clearfix">' 
+      html += '<div class="row"><div class="col-12 clearfix">'
       let xcol=0;
       for(let col of row){
         html += '<img class="float-left xcol" data-xcol="'+xcol+'" src="imgs/' + this.slotImages[col] + '">';
@@ -198,8 +222,3 @@ class Board {
 
   }
 }
-  
-  
-
-
-  
