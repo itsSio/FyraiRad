@@ -4,19 +4,20 @@ class Bot extends Player{
   }
 
   randomClick() {
-  	let randomNumber = Math.floor(Math.random() * 7); // 0-6
-  	$('.game [data-xcol=' + randomNumber + ']').first().click();
+    let randomNumber = Math.floor(Math.random() * 7); // 0-6
+    $('.game [data-xcol=' + randomNumber + ']').first().click();
   }
 
-  // tryUntillValidClick() {
-  // 	let isDone = false;
-  // 	while(isDone == false) {
-  // 		botClick();
-  // 		if(playerTurnChanged) {
-  // 			isDone = true;
-  // 		}
-  // 	}
-  // }
+  tryUntillValidClick() {
+    let that = this;
+  	let isDone = false;
+  	while(isDone == false) {
+  		that.randomClick();
+  		if(app.game.board.currentPlayer != this) {
+  			isDone = true;
+  		}
+  	}
+  }
 
 
 }

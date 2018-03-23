@@ -45,6 +45,7 @@ class Board {
 
         }
         if (playerLength == 4){
+          this.gameFinished = true;
           alert("Du har vunnit")
           return;
         }
@@ -132,8 +133,10 @@ class Board {
 
     if(currentPlayer instanceof Bot) {
       // Setting timer
-      setTimeout(function() {
-        currentPlayer.randomClick();
+      Board.disableAllClicks = true;
+      this.botTimeout = setTimeout(function() {
+        Board.disableAllClicks = false;
+        currentPlayer.tryUntillValidClick();
       }, 400);
     }
   }
@@ -149,7 +152,7 @@ class Board {
     let that = this;
   
     $('.xcol').click(function(){
-      if (this.gameFinished) {
+      if (that.gameFinished || Board.disableAllClicks) {
         return;
       }
 
@@ -165,7 +168,7 @@ class Board {
           
       }
 
-      if (!this.gameFinished) {
+      if (!that.gameFinished) {
         that.makeNewTurn();
       } else {
         console.log('game finished');
@@ -173,9 +176,13 @@ class Board {
 
     });
   
+  // Remove all old click-functions from the restart-button
+   $('#Restart').off();
+   // then add One new click-function to the button
    $('#Restart').click(function(){
-      let b = new Board();
-      b.render();
+    // Cancel the current timer
+    clearTimeout(that.botTimeout);
+      that.game.board = new Board(that.game);
     });
 
   }
