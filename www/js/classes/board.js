@@ -3,6 +3,7 @@ class Board {
   constructor(game){
     this.game = game;
     this.currentPlayerNo = 0;
+    this.antalDrag = 0;
     this.gameFinished = false;
     this.data = [
       [0,0,0,0,0,0,0],
@@ -47,6 +48,7 @@ class Board {
         if (playerLength == 4){
           this.gameFinished = true;
           alert("Du har vunnit")
+          console.log("Antal drag:",this.antalDrag)
           return;
         }
         
@@ -74,6 +76,7 @@ class Board {
         }
         if (playerLength == 4){
           alert("Du har vunnit")
+          console.log("Antal drag:",this.antalDrag)
           return;
         }
         
@@ -84,36 +87,23 @@ class Board {
 
   
    
-  //identifyWinner(){
-     //for (let x = 0; x < this.data.length; x++) {
-   
+  
 
-      // for (let y = 0; y < this.data[x].length; y++) {
-      // var square = this.data[x][y];
-      //  if (square && square.currentPlayerNo) {
-      // if (x === 0 || x === 1) {
-      // if (this.data[x + 1][y].currentPlayerNo === square.currentPlayerNo &&
-       //         this.data[x + 2][y].currentPlayerNo === square.currentPlayerNo &&
-        //        this.data[x + 3][y].currentPlayerNo === square.currentPlayerNo) {
+  
 
-         //     console.log("Color" , square.currentPlayerNo , "Wins");
-         //   return;
-         //   }
-        //  }
-       //  }
-    //  }
-  //   }
-  // }
+
+
 
   makeMove(col){
     let moveOk = false;
-    let antalDrag = 0;
     for(let row = 5; row >= 0; row--){
       if(this.data[row][col] == 0){
         this.data[row][col] = this.currentPlayerNo + 1;
         moveOk = true;
-        antalDrag++;
+         this.antalDrag++;
+         $('.antaldrag').text("Antal drag:"+this.antalDrag);
         break;
+
       }
     }
     return moveOk;
@@ -183,6 +173,8 @@ class Board {
     // Cancel the current timer
     clearTimeout(that.botTimeout);
       that.game.board = new Board(that.game);
+      this.antalDrag = 0;
+      $('.antaldrag').text("Antal drag:"+this.antalDrag);
     });
 
   }
@@ -200,6 +192,7 @@ class Board {
       html += '</div></div>';
     }
     $('.board .game').html(html);
+
 
     this.addEventHandlers();
 

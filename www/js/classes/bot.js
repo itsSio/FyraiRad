@@ -6,7 +6,9 @@ class Bot extends Player{
   randomClick() {
     let randomNumber = Math.floor(Math.random() * 7); // 0-6
     $('.game [data-xcol=' + randomNumber + ']').first().click();
+
   }
+
 
   tryUntillValidClick() {
     let that = this;

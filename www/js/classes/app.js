@@ -24,6 +24,7 @@ class App {
 		console.log(players);
 		$('.p1').text(players[0].name);
 		$('.p2').text(players[1].name);
+		
 		this.game = new Game(players);
 		
 
