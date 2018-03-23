@@ -18,27 +18,56 @@ class Board {
       "col-yellow.png"
     ];
     console.log("HEPP")
-    // Removes scrolling when the game is on
+    // Removes scrolling when the game is on (helps with scaling)
     $('body').addClass('hiddenScroll');
     this.render();
     this.makeNewTurn();
   }
  
   
-   checkWin(playerNo) {
-    
+   checkWinHorizontal(playerNo) {
+     let rows = this.data.length;
+    let cols = this.data[0].length;
 
-    for (let x = 0; x < this.data.length; x++) {
+    for (let y = 0; y < rows; y++) {
       var playerLength = 0;
           
-      for (let y = 0; y < this.data[x].length; y++) {
-        var square = this.data[x][y];
-        //console.log(x,y,square)
+      for (let x = 0; x < cols; x++) {
+        var square = this.data[y][x];
+        
 
         //if (this.data[x][y] === playerNo){
         if (square === playerNo){
           playerLength++;
           console.log("spelare",square,"antal",playerLength)
+        } if (square != playerNo) {
+            playerLength = 0;
+
+        }
+        if (playerLength == 4){
+          this.gameFinished = true;
+          alert("Du har vunnit")
+          return;
+        }
+        
+      }
+    }
+  }
+  checkWinVertical(playerNo) {
+    let rows = this.data.length;
+    let cols = this.data[0].length;
+
+    for (let x = 0; x < cols; x++) {
+      var playerLength = 0;
+          
+      for (let y = 0; y < rows; y++) {
+        var square = this.data[y][x];
+        //console.log(x,y,square)
+
+        //if (this.data[x][y] === playerNo){
+        if (square === playerNo){
+          playerLength++;
+          //console.log("spelare",square,"antal",playerLength)
         } if (square != playerNo) {
             playerLength = 0;
 
@@ -51,6 +80,8 @@ class Board {
       }
     }
   }
+  
+
   
    
   //identifyWinner(){
@@ -81,6 +112,7 @@ class Board {
       if(this.data[row][col] == 0){
         this.data[row][col] = this.currentPlayerNo + 1;
         moveOk = true;
+        antalDrag++;
         break;
       }
     }
@@ -91,17 +123,21 @@ class Board {
 
   switchPlayer(){
     this.currentPlayerNo = this.currentPlayerNo == 0 ? 1 : 0;
+    
+    // Add underline for player names
+    $('h1').toggleClass('p1');
   }
-
 
   makeNewTurn(){
     let currentPlayer = this.game.players[this.currentPlayerNo];
 
     if(currentPlayer instanceof Bot) {
       // Setting timer
-      setTimeout(function() {
-        currentPlayer.randomClick();
-      }, 300);
+      Board.disableAllClicks = true;
+      this.botTimeout = setTimeout(function() {
+        Board.disableAllClicks = false;
+        currentPlayer.tryUntillValidClick();
+      }, 400);
     }
   }
 
@@ -116,7 +152,7 @@ class Board {
     let that = this;
   
     $('.xcol').click(function(){
-      if (this.gameFinished) {
+      if (that.gameFinished || Board.disableAllClicks) {
         return;
       }
 
@@ -124,14 +160,15 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
-        that.checkWin(that.currentPlayerNo+1);
-       
+        that.checkWinHorizontal(that.currentPlayerNo+1);
+        that.checkWinVertical(that.currentPlayerNo+1);
         that.switchPlayer();
         that.render();
         that.checkIfGameFinished();
+          
       }
 
-      if (!this.gameFinished) {
+      if (!that.gameFinished) {
         that.makeNewTurn();
       } else {
         console.log('game finished');
@@ -139,9 +176,13 @@ class Board {
 
     });
   
+  // Remove all old click-functions from the restart-button
+   $('#Restart').off();
+   // then add One new click-function to the button
    $('#Restart').click(function(){
-      let b = new Board();
-      b.render();
+    // Cancel the current timer
+    clearTimeout(that.botTimeout);
+      that.game.board = new Board(that.game);
     });
 
   }
