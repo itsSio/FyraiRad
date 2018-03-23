@@ -3,6 +3,7 @@ class Board {
   constructor(game){
     this.game = game;
     this.currentPlayerNo = 0;
+    this.antalDrag = 0;
     this.gameFinished = false;
     this.data = [
       [0,0,0,0,0,0,0],
@@ -47,6 +48,7 @@ class Board {
         if (playerLength == 4){
           this.gameFinished = true;
           alert("Du har vunnit")
+          console.log("Antal drag:",this.antalDrag)
           return;
         }
         
@@ -74,6 +76,7 @@ class Board {
         }
         if (playerLength == 4){
           alert("Du har vunnit")
+          console.log("Antal drag:",this.antalDrag)
           return;
         }
         
@@ -105,15 +108,20 @@ class Board {
   //   }
   // }
 
+  
+
+
+
+
   makeMove(col){
     let moveOk = false;
-    let antalDrag = 0;
     for(let row = 5; row >= 0; row--){
       if(this.data[row][col] == 0){
         this.data[row][col] = this.currentPlayerNo + 1;
         moveOk = true;
-        antalDrag++;
+         this.antalDrag++;
         break;
+
       }
     }
     return moveOk;
