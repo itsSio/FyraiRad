@@ -25,15 +25,16 @@ class Board {
   }
  
   
-   checkWin(playerNo) {
-    
+   checkWinHorizontal(playerNo) {
+     let rows = this.data.length;
+    let cols = this.data[0].length;
 
-    for (let x = 0; x < this.data.length; x++) {
+    for (let y = 0; y < rows; y++) {
       var playerLength = 0;
           
-      for (let y = 0; y < this.data[x].length; y++) {
-        var square = this.data[x][y];
-        //console.log(x,y,square)
+      for (let x = 0; x < cols; x++) {
+        var square = this.data[y][x];
+        
 
         //if (this.data[x][y] === playerNo){
         if (square === playerNo){
@@ -51,6 +52,35 @@ class Board {
       }
     }
   }
+  checkWinVertical(playerNo) {
+    let rows = this.data.length;
+    let cols = this.data[0].length;
+
+    for (let x = 0; x < cols; x++) {
+      var playerLength = 0;
+          
+      for (let y = 0; y < rows; y++) {
+        var square = this.data[y][x];
+        //console.log(x,y,square)
+
+        //if (this.data[x][y] === playerNo){
+        if (square === playerNo){
+          playerLength++;
+          //console.log("spelare",square,"antal",playerLength)
+        } if (square != playerNo) {
+            playerLength = 0;
+
+        }
+        if (playerLength == 4){
+          alert("Du har vunnit")
+          return;
+        }
+        
+      }
+    }
+  }
+  
+
   
    
   //identifyWinner(){
@@ -81,6 +111,7 @@ class Board {
       if(this.data[row][col] == 0){
         this.data[row][col] = this.currentPlayerNo + 1;
         moveOk = true;
+        antalDrag++;
         break;
       }
     }
@@ -124,11 +155,12 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
-        that.checkWin(that.currentPlayerNo+1);
-       
+        that.checkWinHorizontal(that.currentPlayerNo+1);
+        that.checkWinVertical(that.currentPlayerNo+1);
         that.switchPlayer();
         that.render();
         that.checkIfGameFinished();
+          
       }
 
       if (!this.gameFinished) {
