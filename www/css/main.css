@@ -33,13 +33,18 @@ body  {
   opacity: 0.6;
 }
 
-.form-group{/*plname människa + dator+ */
+.form-group{ /*plname människa + dator */
   color: white;
   opacity: 0.9;
 }
 
-.button-container{
-  margin-left: 100px;
+.button-container{  /* "spela 4 i rad" knappen */
+  margin-top:10px;
+  margin-left: 110px;
+
+
+
+ 
 }
 .game-page {
   display: none;

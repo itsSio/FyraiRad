@@ -91,6 +91,7 @@ class Board {
 
         }
         if (playerLength == 4){
+           this.gameFinished = true;
           let victory = new Victory(game.players);
           victory.victoryToPlayer(playerNo);
           //alert("Du har vunnit")
