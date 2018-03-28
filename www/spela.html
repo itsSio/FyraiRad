@@ -24,7 +24,7 @@
 
 
 <!-- The victory modal -->
-<div class="modal fade" id="victoryOrLoss" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade arnold" id="victoryOrLoss" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -50,12 +50,43 @@
                 <img src="./imgs/victory/startrek.gif"></img>
             </div>
       </div>
-      <div class="modal-footer">
+     <!--  <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
-      </div>
+      </div> -->
     </div>
   </div>
-</div>
+</div><!-- The end of victory modal -->
+
+
+
+<!-- The draw modal -->
+<div class="modal fade" id="draw" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <div class="victorydiv winner">
+                  <h3>It's a...</h3>
+              
+                <img src="./imgs/victory/tie.gif"></img>
+            </div>
+            <br>
+            
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+      </div> -->
+    </div>
+  </div>
+</div> <!-- The end of draw modal -->
+
+
+
 
 
     <header class="container-fluid bg-dark">
@@ -196,8 +227,8 @@
            <button class="btn btn-dark text-white" id="Restart">Starta om spelet</button>
           </div>
         </div>
-        <div class="board mt-3">
-      <div class="col-12 col-ms-4 mt-3">
+        <div class="board">
+      <div class="col-12 col-ms-6 mt-3">
       	<div class="game"></div>
         <div class="text-center">
           <h1 class="p1 d-inline text-danger font-weight-bold">Player 1</h1>

@@ -5,6 +5,10 @@ class Victory {
         this.drag = Math.floor(drag);
     }
 
+    draw(){
+    $('#draw').modal();
+    }
+
     victoryToPlayer(playerNumber) {
         let playerThatWon;
         let playerThatSucked;

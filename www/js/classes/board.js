@@ -242,6 +242,9 @@ class Board {
   checkIfGameFinished(){
     if($('.game img[src="imgs/col.png"]').length == 0) {
       this.gameFinished = true;
+       let draw = new Victory();
+          draw.draw();
+
     }
   }
 
@@ -259,16 +262,16 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
-        winningSquares = that.checkWinHorizontal(that.currentPlayerNo+1);
-        if (winningSquares != null){
-          console.log("win")
-          for (let s = 0; s<4; s++){
-            let square = winningSquares[s]
-            console.log(square.x,square.y)            
-          }
-        }
-        that.checkWinVertical(that.currentPlayerNo+1);
-        that.checkWinDiagonal(that.currentPlayerNo+1);
+        // winningSquares = that.checkWinHorizontal(that.currentPlayerNo+1);
+        // if (winningSquares != null){
+        //   console.log("win")
+        //   for (let s = 0; s<4; s++){
+        //     let square = winningSquares[s]
+        //     console.log(square.x,square.y)            
+        //   }
+        // }
+        // that.checkWinVertical(that.currentPlayerNo+1);
+        // that.checkWinDiagonal(that.currentPlayerNo+1);
         that.switchPlayer();
         that.render();
         that.checkIfGameFinished();
@@ -282,7 +285,7 @@ class Board {
       }
 
     });
-  
+ 
   // Remove all old click-functions from the restart-button
    $('#Restart').off();
    // then add One new click-function to the button
