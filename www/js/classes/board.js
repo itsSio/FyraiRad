@@ -262,16 +262,16 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
-         winningSquares = that.checkWinHorizontal(that.currentPlayerNo+1);
-         if (winningSquares != null){
-           console.log("win")
-           for (let s = 0; s<4; s++){
-             let square = winningSquares[s]
-             console.log(square.x,square.y)            
-           }
-         }
-         that.checkWinVertical(that.currentPlayerNo+1);
-         that.checkWinDiagonal(that.currentPlayerNo+1);
+         // winningSquares = that.checkWinHorizontal(that.currentPlayerNo+1);
+         // if (winningSquares != null){
+         //   console.log("win")
+         //   for (let s = 0; s<4; s++){
+         //     let square = winningSquares[s]
+         //     console.log(square.x,square.y)            
+         //   }
+         // }
+         // that.checkWinVertical(that.currentPlayerNo+1);
+         // that.checkWinDiagonal(that.currentPlayerNo+1);
         that.switchPlayer();
         that.render();
         that.checkIfGameFinished();
