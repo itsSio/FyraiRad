@@ -1,0 +1,72 @@
+[
+  {
+    "player": {
+      "name": "Johan",
+      "color": "Red"
+    },
+    "drag": 10
+  },
+  {
+    "player": {
+      "name": "Joel",
+      "color": "Yellow"
+    },
+    "drag": 11
+  },
+  {
+    "player": {
+      "name": "Sergei",
+      "color": "Red"
+    },
+    "drag": 14
+  },
+  {
+    "player": {
+      "name": "Sergei",
+      "color": "Red"
+    },
+    "drag": 17
+  },
+  {
+    "player": {
+      "name": "Sergei",
+      "color": "Red"
+    },
+    "drag": 20
+  },
+  {
+    "player": {
+      "name": "Sergei",
+      "color": "Red"
+    },
+    "drag": 23
+  },
+  {
+    "player": {
+      "name": "Sergei",
+      "color": "Red"
+    },
+    "drag": 34
+  },
+  {
+    "player": {
+      "name": "Sergei",
+      "color": "Red"
+    },
+    "drag": 100
+  },
+  {
+    "player": {
+      "name": "Sergei",
+      "color": "Red"
+    },
+    "drag": 102
+  },
+  {
+    "player": {
+      "name": "Sergei",
+      "color": "Red"
+    },
+    "drag": 122
+  }
+]

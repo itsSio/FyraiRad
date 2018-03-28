@@ -3,7 +3,7 @@ class Board {
   constructor(game){
     this.game = game;
     this.currentPlayerNo = 0;
-    this.antalDrag = 0;
+    this.antalDrag = 1;
     this.gameFinished = false;
     this.data = [
       [0,0,0,0,0,0,0],
@@ -52,7 +52,7 @@ class Board {
         if (playerLength == 4){
           this.gameFinished = true;
           //alert("Du har vunnit")
-          let victory = new Victory(this.game.players);
+          let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
 
           console.log("Antal drag:",this.antalDrag)
@@ -83,7 +83,7 @@ class Board {
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players);
+           let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
          // alert("Du har vunnit")
           console.log("Antal drag:",this.antalDrag)
@@ -93,7 +93,9 @@ class Board {
       }
     }
   }
+ 
 
+  
   checkWinDiagonal(playerNo){
     let rows = this.data.length;
     let cols = this.data[0].length;
@@ -113,7 +115,7 @@ class Board {
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players);
+           let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
           //alert("Du har vunnit")
           console.log("Antal drag:",this.antalDrag)
@@ -138,7 +140,7 @@ class Board {
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players);
+           let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
           //alert("Du har vunnit")
           console.log("Antal drag:",this.antalDrag)
@@ -164,7 +166,7 @@ class Board {
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players);
+           let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
           //alert("Du har vunnit")
           console.log("Antal drag:",this.antalDrag)
@@ -188,7 +190,7 @@ class Board {
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players);
+           let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
           //alert("Du har vunnit")
           console.log("Antal drag:",this.antalDrag)
@@ -206,8 +208,8 @@ class Board {
       if(this.data[row][col] == 0){
         this.data[row][col] = this.currentPlayerNo + 1;
         moveOk = true;
-         this.antalDrag++;
-         $('.antaldrag').text("Antal drag:"+this.antalDrag);
+         this.antalDrag += 0.5;
+         $('.antaldrag').text("Drag:"+ Math.floor(this.antalDrag));
         break;
 
       }
@@ -260,16 +262,16 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
-        // winningSquares = that.checkWinHorizontal(that.currentPlayerNo+1);
-        // if (winningSquares != null){
-        //   console.log("win")
-        //   for (let s = 0; s<4; s++){
-        //     let square = winningSquares[s]
-        //     console.log(square.x,square.y)            
-        //   }
-        // }
-        // that.checkWinVertical(that.currentPlayerNo+1);
-        // that.checkWinDiagonal(that.currentPlayerNo+1);
+         winningSquares = that.checkWinHorizontal(that.currentPlayerNo+1);
+         if (winningSquares != null){
+           console.log("win")
+           for (let s = 0; s<4; s++){
+             let square = winningSquares[s]
+             console.log(square.x,square.y)            
+           }
+         }
+         that.checkWinVertical(that.currentPlayerNo+1);
+         that.checkWinDiagonal(that.currentPlayerNo+1);
         that.switchPlayer();
         that.render();
         that.checkIfGameFinished();

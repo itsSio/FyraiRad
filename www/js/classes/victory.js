@@ -1,7 +1,8 @@
 class Victory {
 
-    constructor(players) { //i konstruktorn så tar vi in alla beroenden som vi har till resten av spelet: Vi behöver spelarna för att kunna förtydliga förlorarens nederlag, och fira vinnaren.
+    constructor(players, drag) { //i konstruktorn så tar vi in alla beroenden som vi har till resten av spelet: Vi behöver spelarna för att kunna förtydliga förlorarens nederlag, och fira vinnaren.
         this.players = players;  //Den här klassen (refereras via "this") har nu en variabel som heter "players",
+        this.drag = Math.floor(drag);
     }
 
     draw(){
@@ -18,6 +19,9 @@ class Victory {
             playerThatWon = this.players[1];
             playerThatSucked = this.players[0];
         }
+
+        // tell the hi-score-list
+        theHighScoreList.add(playerThatWon, this.drag);
 
         $('#victoryOrLoss').modal();
 
