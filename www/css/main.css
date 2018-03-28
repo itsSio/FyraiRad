@@ -44,9 +44,17 @@ body  {
 
 }
  
-.bigger_text{
+.bigger_text{ /*namn + antal klick*/
   font-size: 30px;
+   color: white;
+  opacity: 0.9;
 }
+.bigger_text2 { /*top 10 spelare*/
+   font-size: 45px;
+   color: white;
+   opacity: 0.9;
+}
+
 
 }
 .game-page {
