@@ -5,23 +5,26 @@ class Victory {
     }
 
 
+
     victoryToPlayer(playerNumber) {
         let playerThatWon;
         let playerThatSucked;
         if (playerNumber === 1) {
-            playerThatWon = players[0]; //array nollindexerad, så spelare 1 är på plats 0.
-            playerThatSucked = players[1];
+            playerThatWon = this.players[0]; //array nollindexerad, så spelare 1 är på plats 0.
+            playerThatSucked = this.players[1];
         } else {
-            playerThatWon = players[1];
-            playerThatSucked = players[0];
+            playerThatWon = this.players[1];
+            playerThatSucked = this.players[0];
         }
 
-        $('body').text('');
-        $('body').css('background-color', playerThatWon.color);
-        $('body').append('<h1>VINNARE: '+ playerThatWon.name +'</h1>');
+        $('#victoryOrLoss').modal();
 
-        $('body').append('<h1>FÖLJANDE SPELARE SÖG: '+ playerThatSucked.name +'</h1>');
+        $('.winner-name').text(playerThatWon.name);
+        $('.sucker-name').text(playerThatSucked.name);
 
 
+        $('.winner').css('background-color',playerThatWon.color);
+        $('.sucker').css('background-color',playerThatSucked.color);
+        $('#victory-audio').trigger('play');
     }
 }

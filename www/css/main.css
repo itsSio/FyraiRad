@@ -63,9 +63,18 @@ body  {
   /* set width and height from js*/
 }
 
+.modal {
+    background-image: url("../imgs/victory/arnold.gif");
+}
 
 
+.victorydiv img {
+  max-width: 65%;
+}
 
+.victorydiv {
+  width: 100%;
+}
 
 
 
