@@ -4,7 +4,9 @@ class Victory {
         this.players = players;  //Den här klassen (refereras via "this") har nu en variabel som heter "players",
     }
 
-
+    draw(){
+    $('#draw').modal();
+    }
 
     victoryToPlayer(playerNumber) {
         let playerThatWon;
