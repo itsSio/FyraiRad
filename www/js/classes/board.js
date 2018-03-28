@@ -18,7 +18,7 @@ class Board {
       "col-red.png",
       "col-yellow.png"
     ];
-    console.log("HEPP")
+    
     // Removes scrolling when the game is on (helps with scaling)
     $('body').addClass('hiddenScroll');
     this.render();
@@ -27,6 +27,7 @@ class Board {
  
   
    checkWinHorizontal(playerNo) {
+    var winningSquares=[];
      let rows = this.data.length;
     let cols = this.data[0].length;
 
@@ -39,6 +40,8 @@ class Board {
 
         //if (this.data[x][y] === playerNo){
         if (square === playerNo){
+          var winningSquare = {x:x,y:y};
+          winningSquares[playerLength]=winningSquare;
           playerLength++;
           console.log("spelare",square,"antal",playerLength)
         } if (square != playerNo) {
@@ -49,11 +52,12 @@ class Board {
           this.gameFinished = true;
           alert("Du har vunnit")
           console.log("Antal drag:",this.antalDrag)
-          return;
+          return winningSquares;
         }
         
       }
     }
+    return null;
   }
   checkWinVertical(playerNo) {
     let rows = this.data.length;
@@ -83,6 +87,110 @@ class Board {
       }
     }
   }
+
+  checkWinDiagonal(playerNo){
+    let rows = this.data.length;
+    let cols = this.data[0].length;
+
+    for (let x = 3; x<cols; x++) {
+      var playerLength = 0;
+      for(let y = 0; y<rows; y++) {
+        if (x-y < 0) {
+          break;
+        }
+        var square = this.data[y][x-y];
+        if (square === playerNo){
+          playerLength++;
+          //console.log("spelare",square,"antal",playerLength)
+        } if (square != playerNo) {
+            playerLength = 0;
+
+        }
+        if (playerLength == 4){
+          alert("Du har vunnit")
+          console.log("Antal drag:",this.antalDrag)
+          return;
+        }
+      }
+    }
+    for(let y = 1; y<rows; y++) {
+      var playerLength = 0;
+
+      for(let x = 0; x<cols; x++) {
+        if (y+x >= rows){
+          break;
+        }
+        var square = this.data[y+x][cols-x-1];
+
+        if (square === playerNo){
+          playerLength++;
+          //console.log("spelare",square,"antal",playerLength)
+        } if (square != playerNo) {
+            playerLength = 0;
+
+        }
+        if (playerLength == 4){
+          alert("Du har vunnit")
+          console.log("Antal drag:",this.antalDrag)
+          return;
+        }
+
+      }
+
+    }
+    for(let x = 0; x<cols; x++){
+      var playerLength = 0;
+      for(let y = 0; y<rows; y++){
+        if (x+y > cols-1){
+          break;
+        }
+        var square = this.data[y][x+y];
+        
+        if (square === playerNo){
+          playerLength++;
+          //console.log("spelare",square,"antal",playerLength)
+        } if (square != playerNo) {
+            playerLength = 0;
+
+        }
+        if (playerLength == 4){
+          alert("Du har vunnit")
+          console.log("Antal drag:",this.antalDrag)
+          return;
+        }
+
+      }    
+    }
+    for (let y = 1; y<rows; y++){
+      var playerLength = 0;
+      for(let x = 0; x<cols; x++){
+        if (y+x >= rows) {
+          break;
+        }
+        var square = this.data[y+x][x];
+        if (square === playerNo){
+          playerLength++;
+          //console.log("spelare",square,"antal",playerLength)
+        } if (square != playerNo) {
+            playerLength = 0;
+
+        }
+        if (playerLength == 4){
+          alert("Du har vunnit")
+          console.log("Antal drag:",this.antalDrag)
+          return;
+        }
+
+      }
+
+    }
+  }
+
+
+
+
+ 
+
   
 
   
@@ -140,6 +248,7 @@ class Board {
   addEventHandlers(){
   
     let that = this;
+    var winningSquares=[];
   
     $('.xcol').click(function(){
       if (that.gameFinished || Board.disableAllClicks) {
@@ -150,8 +259,16 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
-        that.checkWinHorizontal(that.currentPlayerNo+1);
+        winningSquares = that.checkWinHorizontal(that.currentPlayerNo+1);
+        if (winningSquares != null){
+          console.log("win")
+          for (let s = 0; s<4; s++){
+            let square = winningSquares[s]
+            console.log(square.x,square.y)            
+          }
+        }
         that.checkWinVertical(that.currentPlayerNo+1);
+        that.checkWinDiagonal(that.currentPlayerNo+1);
         that.switchPlayer();
         that.render();
         that.checkIfGameFinished();
