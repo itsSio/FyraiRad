@@ -20,6 +20,7 @@ class Board {
     ];
     // Scrolls on top of the page (fixes mobile version)
     window.scrollTo(0, 0);
+    
     // Removes scrolling when the game is on (helps with scaling)
     $('body').addClass('hiddenScroll');
     this.render();
@@ -306,6 +307,7 @@ class Board {
       html += '</div></div>';
     }
     $('.board .game').html(html);
+    
 
 
     this.addEventHandlers();
