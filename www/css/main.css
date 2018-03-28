@@ -1,3 +1,51 @@
+body  {
+  background-image: url("../imgs/bg2.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: verdana;
+}
+
+.pic-container{ /*bilderna på indexsidan*/
+  opacity: 0.9;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+.pic-container h4 {
+  margin: 5%;
+  color: white;
+  opacity: 0.6;
+}
+
+.index-container{ /*texten på indexsidan*/
+
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.index-container p {
+  margin: 5%;
+  color: white;
+  opacity: 0.6;
+}
+.index-container h4 {
+  margin: 5%;
+  color: white;
+  opacity: 0.6;
+}
+
+.form-group{ /*plname människa + dator */
+  color: white;
+  opacity: 0.9;
+}
+
+.button-container{  /* "spela 4 i rad" knappen */
+  margin-top:10px;
+  margin-left: 110px;
+
+
+
+ 
+}
 .game-page {
   display: none;
 }
@@ -15,26 +63,10 @@
   /* set width and height from js*/
 }
 
-.button {
-  padding: 10px 15px;
-  font-size: 24px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 15px;
- /* box-shadow: 0 9px #999;*/
-  }
 
-.button:hover {background-color: #3e8e41}
 
-.button:active {
-  background-color: #3e8e41;
-  /*box-shadow: 0 5px #666;
-  transform: translateY(4px);*/
-}
+
+
 
 
 .invalid, .invalid2 {

@@ -9,19 +9,6 @@
     <!-- Application specific CSS -->
     <link rel="stylesheet" href="css/main.css">
 
-
-    <!-- JavaScript libraries -->
-    <script src="./jsonflex.js"></script>
-    <script src="./js/libs/jquery.js"></script>
-    <script src="./js/libs/popper.js"></script>
-    <script src="./js/libs/bootstrap.js"></script>
-    <script src="./js/libs/sticky-footer.js"></script>
-    <!-- Application specific JavaScript -->
-    <script src="./js/main.js"></script>
-    <script src="./js/libs/sticky-footer.js"></script>
-    
-  </head>
-
   <body>
     <header class="container-fluid bg-dark">
       <div class="row">
@@ -54,14 +41,15 @@
   </header>
 
     <main>
-      <div class="container mt-3">
-        <div class="row bg-white">
+      <div class="index-container col-9">
+        <div class="row"> 
           <div class="col-12 col-sm-8 order-2 order-sm-1 ">
-            <h3>Spela 4 i rad mot datorn - det klassiska taktikspelet som tränar hjärnan.</h3>
+            <h4>Spela 4 i rad mot datorn! 
+              <br>
+              Det klassiska taktikspelet som tränar hjärnan.</h4>
             <p>Ett av de första spelen man lär sig spela!
-              Du får placera dina marker vertikalt, horisontellt eller diagonalt!
-
-            <p>• Bli tilldelad en av två färger.
+              Du får placera dina marker vertikalt, horisontellt eller diagonalt!<br><br>
+              • Bli tilldelad en av två färger.
             <br>
             • Lägg i första markern i vilken öppning som helst på spelbrädet.
             <br>
@@ -71,61 +59,64 @@
             <br>
             • Första spelaren som placerar fyra marker i rad vinner.</p>
      
-            <a href="spela.html">
-            
-            <button class="button float-left">Spela 4 i rad!</button>
-     
-            <!--<button class="btn btn-danger text-white mb-2" >Starta spelet!</button>-->
-          </a>
-          </div>      
+         
+          </div>   
+              
                 <div class="col-12 col-sm-4 order-1 order-ms-1 mb-3 mb-0">
-                  <img class="img-fluid mt-3" src="imgs\pancake.jpg">
+                  <img class="img-fluid mt-3" src="imgs\pancake.jpg"> 
+                
                 </div>
-           </div>
-        </div>
+           </div><!--row-->
+        </div><!--index-container-->
 
+<div class="button-container">
+  <a href="spela.html">
+  <button type="button" class="btn btn-dark center">Spela 4 i rad!</button>
+  </a>
+</div>
 
-      <div class="container border rounded mt-4">
-
+      <div class="pic-container"> 
         <div class="row">
-
-          <div class="col-12 m-2">
-            <h2>Andra spel online</h2>
+          <div class="col-12 col-md-6">
+            <h4>Andra spel online</h4>
           </div>
 
         </div>  
 
-        <div class="row justify-content-center mb-5">
+        <div class="row container-fluid justify-content-center mb-5">
 
-          <div class="row col-11">
+          <div class="row col-12 col-md-6">
+
+
             
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-md-3  mt-2">
               <a href="http://www.agame.com/game/turbotastic" target="_blank">
                <img src="imgs/Turbotastic.jpg" alt="..." class="img-thumbnail">
               </a>
             </div>
 
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-md-3 mt-2">
               <a href="http://www.spela.se/spel_/runes-of-the-ancient-forest" target="_blank">
                 <img src="imgs/Runes.jpg" alt="..." class="img-thumbnail">
               </a>
             </div>
 
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-md-3  mt-2">
               <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
                 <img src="imgs/Space.jpg" alt="..." class="img-thumbnail">
               </a>
             </div>
 
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-md-3  mt-2">
               <a href="https://www.pragmaticplay.com/games/jurassic-giants/#" target="_blank">
                 <img src="imgs/Jurassic.jpg" alt="..." class="img-thumbnail">
               </a>
             </div>
 
-          </div>    
-        </div>
-      </div>  
+          </div>  <!-- row col-6--> 
+        </div>  <!-- row justify-content-center -->
+
+      </div>  <!--pic-container-->
 
     </main>
 
@@ -136,8 +127,7 @@
     <div class="col-12 col-sm-4 text-sm-center">
       <div class="d-inline-block text-left ml-5 ml-sm-0">
         <h4>Skaparna av 4 i rad</h4>
-        <p class="m-0">Johan, Joel, Sergei, Jessica</p>
-      
+        <p class="m-0">Johan, Joel, Sergei, Jessica</p>   
       </div>
     </div>
 
@@ -161,7 +151,14 @@
 
 
 </footer>
-
+    <!-- JavaScript libraries -->
+    <script src="./jsonflex.js"></script>
+    <script src="./js/libs/jquery.js"></script>
+    <script src="./js/libs/popper.js"></script>
+    <script src="./js/libs/bootstrap.js"></script>
+    <script src="./js/libs/sticky-footer.js"></script>
+    <!-- Application specific JavaScript -->
+    <script src="./js/main.js"></script>
 
   </body>
 

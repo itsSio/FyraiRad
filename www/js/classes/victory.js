@@ -5,7 +5,7 @@ class Victory {
     }
 
 
-    victoryToPlayer(playerNo) {
+    victoryToPlayer(playerNumber) {
         let playerThatWon;
         let playerThatSucked;
         if (playerNumber === 1) {
