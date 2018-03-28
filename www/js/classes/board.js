@@ -18,14 +18,14 @@ class Board {
       "col-red.png",
       "col-yellow.png"
     ];
-    
+    // Scrolls on top of the page (fixes mobile version)
+    window.scrollTo(0, 0);
     // Removes scrolling when the game is on (helps with scaling)
     $('body').addClass('hiddenScroll');
     this.render();
     this.makeNewTurn();
   }
  
-  
    checkWinHorizontal(playerNo) {
     var winningSquares=[];
      let rows = this.data.length;
