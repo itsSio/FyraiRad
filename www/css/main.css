@@ -63,8 +63,8 @@ body  {
   /* set width and height from js*/
 }
 
-.modal {
-    background-image: url("../imgs/victory/arnold.gif");
+.arnold {
+  background-image: url("../imgs/victory/arnold.gif");
 }
 
 
@@ -77,7 +77,7 @@ body  {
 }
 
 .victorydiv audio {
-  display:none;
+  display: none;
 }
 
 
@@ -111,4 +111,6 @@ body  {
   text-decoration: underline;
 }
 
- 
+ .d-inline, .antaldrag {
+  font-size: 30px;
+ }
