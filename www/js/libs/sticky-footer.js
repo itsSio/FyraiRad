@@ -28,3 +28,7 @@ function stickyFooter(){
 $(window).resize(stickyFooter);
 // Run the sticky footer function once when the page loads
 $(stickyFooter);
+// Run the sticky footer function with an interval too
+// (we would actually need to call it when we add html dynimacally through
+//  JavaScript, but since we are to lazy for that instead call it twice every sec)
+setInterval(stickyFooter, 500);
