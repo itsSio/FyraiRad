@@ -42,9 +42,12 @@ body  {
   margin-top:10px;
   margin-left: 110px;
 
-
-
+}
  
+.bigger_text{
+  font-size: 30px;
+}
+
 }
 .game-page {
   display: none;
