@@ -76,6 +76,9 @@ body  {
   width: 100%;
 }
 
+.victorydiv audio {
+  display:none;
+}
 
 
 .invalid, .invalid2 {

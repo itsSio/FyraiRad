@@ -26,5 +26,8 @@ class Victory {
         $('.winner').css('background-color',playerThatWon.color);
         $('.sucker').css('background-color',playerThatSucked.color);
         $('#victory-audio').trigger('play');
+        setTimeout(function(){
+            $('#victory-audio').trigger('pause');
+        }, 10000)
     }
 }
