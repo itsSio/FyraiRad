@@ -18,8 +18,8 @@ body  {
 }
 
 .index-container{ /*texten på indexsidan*/
-  margin-left: 60px;
-  margin-right: 60px;
+ /* margin-left: 60px;
+  margin-right: 60px;*/
 }
 
 .index-container p {
@@ -39,8 +39,8 @@ body  {
 }
 
 .button-container{  /* "spela 4 i rad" knappen */
-  margin-top:10px;
-  margin-left: 110px; 
+  margin-top: 10px;
+  margin-left: 40px; 
 }
 
 .game-page {
