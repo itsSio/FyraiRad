@@ -5,6 +5,7 @@ body  {
   font-family: verdana;
 }
 
+}
 .pic-container{ /*bilderna på indexsidan*/
   opacity: 0.9;
   margin-left: 60px;
@@ -17,7 +18,6 @@ body  {
 }
 
 .index-container{ /*texten på indexsidan*/
-
   margin-left: 60px;
   margin-right: 60px;
 }
@@ -45,12 +45,13 @@ body  {
 
 .game-page {
   display: none;
+
 }
 
 .bigger_text{ /* namn + antal klick */
   font-size: 30px;
   color: white;
-  opacity: 0.8;
+  opacity: 0.1;
 }
 
 
@@ -63,6 +64,7 @@ body  {
 
 .board-holder {
   overflow: hidden;
+  
   /* set width and height from js*/
 }
 
@@ -117,7 +119,3 @@ body  {
  .d-inline, .antaldrag {
   font-size: 30px;
  }
-
-.namn, .drag {
-  opacity: 0.8;
-}
