@@ -5,6 +5,7 @@ body  {
   font-family: verdana;
 }
 
+}
 .pic-container{ /*bilderna på indexsidan*/
   opacity: 0.9;
   margin-left: 60px;
@@ -17,9 +18,8 @@ body  {
 }
 
 .index-container{ /*texten på indexsidan*/
-
-  margin-left: 60px;
-  margin-right: 60px;
+ /* margin-left: 60px;
+  margin-right: 60px;*/
 }
 
 .index-container p {
@@ -39,12 +39,13 @@ body  {
 }
 
 .button-container{  /* "spela 4 i rad" knappen */
-  margin-top:10px;
-  margin-left: 110px; 
+  margin-top: 10px;
+  margin-left: 40px; 
 }
 
 .game-page {
   display: none;
+
 }
 
 .bigger_text{ /* namn + antal klick */
@@ -63,6 +64,7 @@ body  {
 
 .board-holder {
   overflow: hidden;
+  
   /* set width and height from js*/
 }
 
@@ -117,7 +119,3 @@ body  {
  .d-inline, .antaldrag {
   font-size: 30px;
  }
-
-.namn, .drag {
-  opacity: 0.8;
-}
