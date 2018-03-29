@@ -5,6 +5,7 @@ class Board {
     this.currentPlayerNo = 0;
     this.antalDrag = 1;
     this.gameFinished = false;
+   //Skapar en array för spelplanen
     this.data = [
       [0,0,0,0,0,0,0],
       [0,0,0,0,0,0,0],
@@ -13,6 +14,7 @@ class Board {
       [0,0,0,0,0,0,0],
       [0,0,0,0,0,0,0]
     ];
+   //Skapar en array med tomma samt förgade brickor
     this.slotImages = [
       "col.png",
       "col-red.png",
@@ -27,9 +29,10 @@ class Board {
     this.makeNewTurn();
   }
  
+ //Kollar alla horisontella led efter vinst
    checkWinHorizontal(playerNo) {
     var winningSquares=[];
-     let rows = this.data.length;
+    let rows = this.data.length;
     let cols = this.data[0].length;
 
     for (let y = 0; y < rows; y++) {
@@ -38,24 +41,18 @@ class Board {
       for (let x = 0; x < cols; x++) {
         var square = this.data[y][x];
         
-
-        //if (this.data[x][y] === playerNo){
         if (square === playerNo){
           var winningSquare = {x:x,y:y};
           winningSquares[playerLength]=winningSquare;
           playerLength++;
-          console.log("spelare",square,"antal",playerLength)
-        } if (square != playerNo) {
+        }if (square != playerNo) {
             playerLength = 0;
 
         }
         if (playerLength == 4){
           this.gameFinished = true;
-          //alert("Du har vunnit")
           let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
-
-          console.log("Antal drag:",this.antalDrag)
           return winningSquares;
         }
         
@@ -63,44 +60,43 @@ class Board {
     }
     return null;
   }
+  //Kollar alla vertikala led efter vinst
   checkWinVertical(playerNo) {
     let rows = this.data.length;
     let cols = this.data[0].length;
 
     for (let x = 0; x < cols; x++) {
-      var playerLength = 0;
+    var playerLength = 0;
           
-      for (let y = 0; y < rows; y++) {
+     for (let y = 0; y < rows; y++) {
         var square = this.data[y][x];
-        //console.log(x,y,square)
 
-        //if (this.data[x][y] === playerNo){
         if (square === playerNo){
           playerLength++;
-          //console.log("spelare",square,"antal",playerLength)
+          
         } if (square != playerNo) {
             playerLength = 0;
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players, this.antalDrag);
+          this.gameFinished = true;
+          let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
-         // alert("Du har vunnit")
-          console.log("Antal drag:",this.antalDrag)
+         
           return;
         }
         
       }
     }
   }
- 
 
-  
+  //Kollar efter vinster på alla möjliga diagonala led
   checkWinDiagonal(playerNo){
     let rows = this.data.length;
     let cols = this.data[0].length;
 
-    for (let x = 3; x<cols; x++) {
+    //Kollar leden 3-6 i x-led från vänster till höger
+    for (let x = 0; x<cols; x++) {
       var playerLength = 0;
       for(let y = 0; y<rows; y++) {
         if (x-y < 0) {
@@ -109,20 +105,21 @@ class Board {
         var square = this.data[y][x-y];
         if (square === playerNo){
           playerLength++;
-          //console.log("spelare",square,"antal",playerLength)
+          
         } if (square != playerNo) {
             playerLength = 0;
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players, this.antalDrag);
+          this.gameFinished = true;
+          let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
-          //alert("Du har vunnit")
-          console.log("Antal drag:",this.antalDrag)
+          
           return;
         }
       }
     }
+   //Kollar de 2 resterande möjliga leden från vänster till höger
     for(let y = 1; y<rows; y++) {
       var playerLength = 0;
 
@@ -134,22 +131,23 @@ class Board {
 
         if (square === playerNo){
           playerLength++;
-          //console.log("spelare",square,"antal",playerLength)
+          
         } if (square != playerNo) {
             playerLength = 0;
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players, this.antalDrag);
+          this.gameFinished = true;
+          let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
-          //alert("Du har vunnit")
-          console.log("Antal drag:",this.antalDrag)
+          
           return;
         }
 
       }
 
     }
+    //Kollar leden från vänster till höger på diagonalen
     for(let x = 0; x<cols; x++){
       var playerLength = 0;
       for(let y = 0; y<rows; y++){
@@ -160,16 +158,16 @@ class Board {
         
         if (square === playerNo){
           playerLength++;
-          //console.log("spelare",square,"antal",playerLength)
+          
         } if (square != playerNo) {
             playerLength = 0;
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players, this.antalDrag);
+          this.gameFinished = true;
+          let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
-          //alert("Du har vunnit")
-          console.log("Antal drag:",this.antalDrag)
+          
           return;
         }
 
@@ -184,16 +182,16 @@ class Board {
         var square = this.data[y+x][x];
         if (square === playerNo){
           playerLength++;
-          //console.log("spelare",square,"antal",playerLength)
+          
         } if (square != playerNo) {
             playerLength = 0;
 
         }
         if (playerLength == 4){
-           let victory = new Victory(this.game.players, this.antalDrag);
+          this.gameFinished = true;
+          let victory = new Victory(this.game.players, this.antalDrag);
           victory.victoryToPlayer(playerNo);
-          //alert("Du har vunnit")
-          console.log("Antal drag:",this.antalDrag)
+          
           return;
         }
 
@@ -201,31 +199,31 @@ class Board {
 
     }
   }
-
+  //Kollar om platsen på spelplanen är ledig för att lägga ut en bricka 
   makeMove(col){
     let moveOk = false;
     for(let row = 5; row >= 0; row--){
       if(this.data[row][col] == 0){
         this.data[row][col] = this.currentPlayerNo + 1;
         moveOk = true;
-         this.antalDrag += 0.5;
-         $('.antaldrag').text("Drag:"+ Math.floor(this.antalDrag));
+        this.antalDrag += 0.5;
+        $('.antaldrag').text("Drag:"+ Math.floor(this.antalDrag));
         break;
 
       }
     }
     return moveOk;
-   // identifyWinner();
+   
    
   }
-
+  //Byter mellan spelare 1 och 2
   switchPlayer(){
     this.currentPlayerNo = this.currentPlayerNo == 0 ? 1 : 0;
     
     // Add underline for player names
     $('h1').toggleClass('p1');
   }
-
+  //
   makeNewTurn(){
     let currentPlayer = this.game.players[this.currentPlayerNo];
 
@@ -242,8 +240,8 @@ class Board {
   checkIfGameFinished(){
     if($('.game img[src="imgs/col.png"]').length == 0) {
       this.gameFinished = true;
-       let draw = new Victory();
-          draw.draw();
+      let draw = new Victory();
+      draw.draw();
 
     }
   }
@@ -262,18 +260,22 @@ class Board {
       let moveWasOk = that.makeMove(col);
 
       if (moveWasOk) {
+         //Kollar vilka platser de vinnande brickorna låg på och kallar på funktionen för horisontella vinster
          winningSquares = that.checkWinHorizontal(that.currentPlayerNo+1);
          if (winningSquares != null){
-           console.log("win")
            for (let s = 0; s<4; s++){
-             let square = winningSquares[s]
-             console.log(square.x,square.y)            
+             let square = winningSquares[s]          
            }
          }
-         that.checkWinVertical(that.currentPlayerNo+1);
-         that.checkWinDiagonal(that.currentPlayerNo+1);
+        //Kallar på funktionen för vertikala vinster
+        that.checkWinVertical(that.currentPlayerNo+1);
+        //Kallar på funktionen för diagonala vinster
+        that.checkWinDiagonal(that.currentPlayerNo+1);
+        //Kallar på funktionen som byter spelare vid varje nytt drag
         that.switchPlayer();
+        //Kallar på funktionen som renderar spelplanen
         that.render();
+        //Kallar på funktionen som kollar om spelet är över
         that.checkIfGameFinished();
           
       }
@@ -281,7 +283,6 @@ class Board {
       if (!that.gameFinished) {
         that.makeNewTurn();
       } else {
-        console.log('game finished');
       }
 
     });
@@ -291,14 +292,15 @@ class Board {
    // then add One new click-function to the button
    $('#Restart').click(function(){
     // Cancel the current timer
+    $('#victory-audio').trigger('pause');
     clearTimeout(that.botTimeout);
-      that.game.board = new Board(that.game);
-      this.antalDrag = 0;
-      $('.antaldrag').text("Antal drag:"+this.antalDrag);
+    that.game.board = new Board(that.game);
+    this.antalDrag = 1;
+    $('.antaldrag').text("Drag:1");
     });
 
   }
-
+//Renderar spelplanen
   render(){
     // in the div with the class "board" render all rows and columns from the data array
     let html = '';
