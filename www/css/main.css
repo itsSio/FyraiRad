@@ -18,8 +18,13 @@ body  {
 }
 
 .index-container{ /*texten på indexsidan*/
- /* margin-left: 60px;
-  margin-right: 60px;*/
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.no-margin{
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .index-container p {
