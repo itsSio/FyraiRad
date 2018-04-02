@@ -15,79 +15,59 @@
     <script src="./js/libs/popper.js"></script>
     <script src="./js/libs/bootstrap.js"></script>
     <script src="./js/libs/sticky-footer.js"></script>
-
-
-
-</head>
+  </head>
   <body>
-
-
-
-<!-- The victory modal -->
-<div class="modal fade arnold" id="victoryOrLoss" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+    <!-- The victory modal -->
+    <div class="modal fade arnold" id="victoryOrLoss" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
             <div class="victorydiv winner text-center">
-                  <h3>Segrare:</h3>
-                <h1 class="winner-name"></h1>
-                <!-- The victory song -->
-                <audio id="victory-audio" controls preload="none">
-                   <source src="./audio/victory.mp3" type="audio/mpeg">
-                </audio>
-                <img src="./imgs/victory/winner.gif"></img>
+              <h3>Segrare:</h3>
+              <h1 class="winner-name"></h1>
+              <!-- The victory song -->
+              <audio id="victory-audio" controls preload="none">
+                <source src="./audio/victory.mp3" type="audio/mpeg">
+              </audio>
+              <img src="./imgs/victory/winner.gif"></img>
             </div>
             <br>
             <div class="victorydiv sucker text-center">
-                <h3>Förlorare:</h3>
-                <h1 class="sucker-name"></h1>
-                <img src="./imgs/victory/startrek.gif"></img>
+              <h3>Förlorare:</h3>
+              <h1 class="sucker-name"></h1>
+              <img src="./imgs/victory/startrek.gif"></img>
             </div>
+          </div>
+        </div>
       </div>
-   <!--   <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
-      </div> -->
-    </div>
-  </div>
-</div><!-- The end of victory modal -->
+    </div><!-- The end of victory modal -->
 
-
-
-<!-- The draw modal -->
-<div class="modal fade" id="draw" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+    <!-- The draw modal -->
+    <div class="modal fade" id="draw" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
             <div class="victorydiv winner text-center">
-                  <h3>It's a...</h3>
-
-                <img src="./imgs/victory/tie.gif"></img>
+              <h3>It's a...</h3>
+              <img src="./imgs/victory/tie.gif"></img>
             </div>
             <br>
-
+          </div>
+        </div>
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
-      </div> -->
-    </div>
-  </div>
-</div> <!-- The end of draw modal -->
-
-
-
-
+    </div> <!-- The end of draw modal -->
 
     <header class="container-fluid bg-dark">
       <div class="row">
@@ -119,162 +99,123 @@
           </nav>
         </div>
       </div>
-  </header>
+    </header>
 
     <main>
-
       <div class="input-forms container mt-5">
-
         <div class="row justify-content-around">
-
           <div class="col-10">
-
             <div class="form-group">
-            <label for="spelare1">Ange spelare 1</label>
-
-            <div class="row justify-content-around order-1">
-              <div class="col-12 col-md-6">    
-                <input type="text" class="form-control" id="player1" placeholder="Namn" value="anyName1">
-                <p class="invalid hidden">text</p>
-              </div>
-
-              <div class="col-12 col-md-2 order-2">
-
-              </div>
-
-              <div class="col-12 col-md-1 order-3">
-                <p>Typ:</p>
-              </div>
-
-              <div class="col-12 col-md-3 order-4">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="player1HumanOrBot" id="player1Human" value="human" checked>
-                  <label class="form-check-label" for="player1Human">
-                    Människa
-                  </label>
+              <label for="spelare1">Ange spelare 1</label>
+              <div class="row justify-content-around order-1">
+                <div class="col-12 col-md-6">    
+                  <input type="text" class="form-control" id="player1" placeholder="Namn" value="anyName1">
+                  <p class="invalid hidden">text</p>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="player1HumanOrBot" id="player1Bot" value="bot">
-                  <label class="form-check-label" for="player1Bot">
-                    Dator
-                  </label>
+                <div class="col-12 col-md-2 order-2"></div>
+                <div class="col-12 col-md-1 order-3">
+                  <p>Typ:</p>
                 </div>
-
-              </div>
-            </div> <!-- row2 -->
-          </div> <!-- col-10 -->
-        </div> <!-- row1 -->
+                <div class="col-12 col-md-3 order-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="player1HumanOrBot" id="player1Human" value="human" checked>
+                    <label class="form-check-label" for="player1Human">
+                      Människa
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="player1HumanOrBot" id="player1Bot" value="bot">
+                    <label class="form-check-label" for="player1Bot">
+                      Dator
+                    </label>
+                  </div>
+                </div>
+              </div> <!-- row2 -->
+            </div> <!-- col-10 -->
+          </div> <!-- row1 -->
         </div>
-
 
         <div class="row justify-content-around mt-5">
-
           <div class="col-10">
-
-
             <div class="form-group">
               <label for="player2">Ange spelare 2</label>
-
-
-            <div class="row justify-content-around">
-              <div class="col-12 col-md-6">    
-                <input type="text" class="form-control" id="player2" placeholder="Namn" value="anyName2">
-                <p class="invalid2 hidden2">text</p>
-              </div>
-
-              <div class="col-12 col-md-2 order-2">
-
-              </div>
-
-              <div class="col-12 col-md-1 order-3">
-                <p>Typ:</p>
-              </div>
-
-               <div class="col-12 col-md-3 order-4">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="player2HumanOrBot" id="player2Human" value="human" checked>
-                  <label class="form-check-label" for="player2Human">
-                    Människa
-                  </label>
+              <div class="row justify-content-around">
+                <div class="col-12 col-md-6">    
+                  <input type="text" class="form-control" id="player2" placeholder="Namn" value="anyName2">
+                  <p class="invalid2 hidden2">text</p>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="player2HumanOrBot" id="player2Bot" value="bot">
-                  <label class="form-check-label" for="player2Bot">
-                    Dator
-                  </label>
+                <div class="col-12 col-md-2 order-2"></div>
+                <div class="col-12 col-md-1 order-3">
+                  <p>Typ:</p>
                 </div>
-
-
+                <div class="col-12 col-md-3 order-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="player2HumanOrBot" id="player2Human" value="human" checked>
+                    <label class="form-check-label" for="player2Human">
+                      Människa
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="player2HumanOrBot" id="player2Bot" value="bot">
+                    <label class="form-check-label" for="player2Bot">
+                      Dator
+                    </label>
+                  </div>
+                </div>
               </div>
+            </div>
+            <div class="col-12 col-md-3 float-right mt-3">
+              <button class="btn btn-dark text-white mb-2 start-game-after-player-input">Starta</button>
             </div>
           </div>
-            <div class="col-12 col-md-3 float-right mt-3">
-                <button class="btn btn-dark text-white mb-2 start-game-after-player-input">Starta</button>
-            </div>
         </div>
-      </div>
       </div> <!-- end of container -->
 
       <div class="game-page container">
         <div class="row">
           <div class="col-12 col-ms-4 order-ms-1 mb-3 mb-0 mt-3 text-white text-center">
             <a href="index.html">
-
-
-
-
-
-            <button class="btn btn-dark text-white">Tillbaka till startsidan</button>
-          </a>
-           <button class="btn btn-dark text-white" id="Restart">Starta om spelet</button>
+              <button class="btn btn-dark text-white">Tillbaka till startsidan</button>
+            </a>
+            <button class="btn btn-dark text-white" id="Restart">Starta om spelet</button>
           </div>
         </div>
+
         <div class="board">
-      <div class="col-12 col-ms-6 mt-3">
-      	<div class="game"></div>
-        <div class="text-center">
-          <h1 class="p1 d-inline text-danger font-weight-bold">Player 1</h1>
-          <span class="font-weight-bold text-white">VS</span>
-          <h1 class="p2 d-inline text-warning font-weight-bold">Player 2</h1>
-          <h2 class="antaldrag d-block text-white font-weight-bold">Antal drag:</h2>
+          <div class="col-12 col-ms-6 mt-3">
+          	<div class="game"></div>
+            <div class="text-center">
+              <h1 class="p1 d-inline text-danger font-weight-bold">Player 1</h1>
+              <span class="font-weight-bold text-white">VS</span>
+              <h1 class="p2 d-inline text-warning font-weight-bold">Player 2</h1>
+              <h2 class="antaldrag d-block text-white font-weight-bold">Antal drag:</h2>
+            </div>
+          </div>
         </div>
-      </div>
-
-    </div>
-
     </main>
 
-     <footer class="container-fluid bg-dark text-white mt-4">
-
-  <div class="row py-3">
-
-    <div class="col-12 col-sm-4 text-sm-center">
-      <div class="d-inline-block text-left ml-5 ml-sm-0">
-        <h4>Skaparna av 4 i rad</h4>
-      <p class="m-0">Johan, Joel, Sergei, Jessica</p>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-4 text-sm-center mt-3 mt-sm-0">
-      <div class="d-inline-block text-left ml-5 ml-sm-0">
-        <h4>Version</h4>
-        <p class="m-0">1.0</p>
-
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-4 text-sm-center mt-3 mt-sm-0">
-      <div class="d-inline-block text-left ml-5 ml-sm-0">
-        <h4>Kontakta oss</h4>
-        <p class="m-0">4irad@gmail.com</p>
-
+    <footer class="container-fluid bg-dark text-white mt-4">
+      <div class="row py-3">
+        <div class="col-12 col-sm-4 text-sm-center">
+          <div class="d-inline-block text-left ml-5 ml-sm-0">
+            <h4>Skaparna av 4 i rad</h4>
+          <p class="m-0">Johan, Joel, Sergei, Jessica</p>
+          </div>
         </div>
-    </div>
-
-  </div>
-
-
-</footer>
+        <div class="col-12 col-sm-4 text-sm-center mt-3 mt-sm-0">
+          <div class="d-inline-block text-left ml-5 ml-sm-0">
+            <h4>Version</h4>
+            <p class="m-0">1.0</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 text-sm-center mt-3 mt-sm-0">
+          <div class="d-inline-block text-left ml-5 ml-sm-0">
+            <h4>Kontakta oss</h4>
+            <p class="m-0">4irad@gmail.com</p>
+            </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Application specific JavaScript -->
     <script src="./js/classes/app.js"></script>
@@ -286,5 +227,4 @@
     <script src="./js/classes/victory.js"></script>
     <script src="./js/main.js"></script>
   </body>
-
 </html>

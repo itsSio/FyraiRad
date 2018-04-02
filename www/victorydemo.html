@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -8,34 +8,27 @@
     <link rel="stylesheet" href="css/libs/bootstrap.css">
     <!-- Application specific CSS -->
     <link rel="stylesheet" href="css/main.css">
+  </head>
    
-<body>
-
-<div class="container">
-    <div class="row">
+  <body>
+    <div class="container">
+      <div class="row">
         <div class="col-6 offset-3 bg-dark text-white text-center">
-            <span> Spela spelet förfan</span>
+          <span> Spela spelet förfan</span>
         </div>
+      </div>
     </div>
-</div>
 
-<div class="container ">
+    <div class="container ">
+      <div class="board"></div>
+      <!-- <img class="float-left" src="imgs/col.png"> -->
+    </div>
+    <button onclick="victory.victoryToPlayer(1);">Spelare 1 har vunnit</button>
+    <button onclick="victory.victoryToPlayer(2);">Spelare 2 har vunnit</button>
 
-    <div class="board"></div>
-    <!-- <img class="float-left" src="imgs/col.png"> -->
-</div>
-
-
-
-<button onclick="victory.victoryToPlayer(1);">Spelare 1 har vunnit</button>
-
-<button onclick="victory.victoryToPlayer(2);">Spelare 2 har vunnit</button>
-
-
-<footer>
-
-</footer>
-   <!-- JavaScript libraries -->
+    <footer>
+    </footer>
+    <!-- JavaScript libraries -->
     <script src="./jsonflex.js"></script>
     <script src="./js/libs/jquery.js"></script>
     <script src="./js/libs/popper.js"></script>
@@ -52,18 +45,15 @@
 
     <script>
 
-    let players = [
-        new Player("Hej", "red"),
-        new Player("Hå", "yellow")
-    ];
+      let players = [
+          new Player("Hej", "red"),
+          new Player("Hå", "yellow")
+      ];
 
-    new Game(players);
+      new Game(players);
+      victory = new Victory(players);
 
+    </script>
 
-     victory = new Victory(players);
-</script>
-
-
-</body>
-
+  </body>
 </html>
